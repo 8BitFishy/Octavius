@@ -1,0 +1,5 @@
+light
+Projector
+speakers
+empty3
+empty4
