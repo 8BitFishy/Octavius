@@ -1,5 +1,5 @@
 light
 Projector
 speakers
-empty3
+Purifier
 empty4
