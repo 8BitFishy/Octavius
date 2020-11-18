@@ -1,5 +1,5 @@
 light
-Projector
+pi
 speakers
-Purifier
-empty4
+purifier
+monitor
