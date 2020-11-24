@@ -1,0 +1,5 @@
+purifier
+pi
+speakers
+john
+monitor
