@@ -1,8 +1,9 @@
 class WordList_Manager:
-    def __init__(self, affirmativelist, greetings, negativelist):
+    def __init__(self, affirmativelist, greetings, negativelist, gratitude):
         self.affirmativelist = affirmativelist
         self.greetings = greetings
         self.negativelist = negativelist
+        self.gratitude = gratitude
 
     def updateaffirmatives(self, Octavius_Receiver):
         Octavius_Receiver.send_message('Please write affirmative to add to list')
@@ -15,7 +16,7 @@ class WordList_Manager:
             if response not in self.affirmativelist:
                 self.affirmativelist.append(response)
                 print(self.affirmativelist)
-                with open('affirmativelist.txt', 'w') as f:
+                with open('vocab/affirmativelist.txt', 'w') as f:
                     for i in self.affirmativelist:
                         f.write(i)
                         f.write("\n")
@@ -31,8 +32,8 @@ class WordList_Manager:
 
 
 def Generate_Wordlists():
-    Octavius_Vocab = WordList_Manager([],[],[])
-    with open('affirmativelist.txt') as f:
+    Octavius_Vocab = WordList_Manager([],[],[], [])
+    with open('vocab/affirmativelist.txt') as f:
         affirmativelist = f.read().splitlines()
         for i in range(len(affirmativelist)):
             affirmativelist[i] = affirmativelist[i].lower()
@@ -40,18 +41,29 @@ def Generate_Wordlists():
     Octavius_Vocab.affirmativelist = affirmativelist
 
 
-    with open('negativelist.txt') as f:
+    with open('vocab/negativelist.txt') as f:
         negativelist = f.read().splitlines()
         for i in negativelist:
             i = i.lower()
             i.rstrip()
     Octavius_Vocab.negativelist = negativelist
 
-    with open('greetings.txt') as f:
+    with open('vocab/greetings.txt') as f:
         greetings = f.read().splitlines()
         for i in range(len(greetings)):
             greetings[i] = greetings[i].lower()
             greetings[i].rstrip()
     Octavius_Vocab.greetings = greetings
+
+    with open('vocab/gratitude.txt') as f:
+        gratitude = f.read().splitlines()
+        for i in range(len(gratitude)):
+            gratitude[i] = gratitude[i].lower()
+            gratitude[i].rstrip()
+    Octavius_Vocab.gratitude = gratitude
+
+
+
+
 
     return Octavius_Vocab

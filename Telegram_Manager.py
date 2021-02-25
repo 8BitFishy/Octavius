@@ -3,7 +3,7 @@ import requests
 import urllib
 import Format_Manager
 
-filename = 'telegramID.txt'
+filename = 'apis/telegramID.txt'
 
 with open(filename) as f:
     IDS = f.read().splitlines()
@@ -53,7 +53,17 @@ class Message_Receiver:
         text = urllib.parse.quote_plus(text)
         url = URL + "sendMessage?text={}&chat_id={}".format(text, chat_id)
         self.get_url(url)
+        
+    def send_image(self, image_file):
+        files = {'photo': open(image_file, 'rb')}
+        status = requests.post(URL + "sendPhoto?chat_id=" + chat_id, files=files) 
+        return
     
+    def send_video(self, video_file):
+        files = {'video': open(video_file, 'rb')}
+        status = requests.post(URL + "sendVideo?chat_id=" + chat_id, files=files) 
+        return
+
     def get_response(self):
         print("Entering get response")
         updates = self.get_updates(self.last_update_id)

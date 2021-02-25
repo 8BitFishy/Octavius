@@ -1,4 +1,4 @@
-filename = 'questions.txt'
+filename = 'vocab/questions.txt'
 
 class Grammar_Nazi:
     def __init__(self, questions):
