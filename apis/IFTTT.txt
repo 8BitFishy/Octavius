@@ -1,2 +1,0 @@
-https://maker.ifttt.com/trigger/Octavius_Light_On/with/key/oLTOy4snvM_qBUyMVe6nBYJZWXHNYZpvcz9zONksFYA
-https://maker.ifttt.com/trigger/Octavius_Light_Off/with/key/oLTOy4snvM_qBUyMVe6nBYJZWXHNYZpvcz9zONksFYA
